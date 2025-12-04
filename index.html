@@ -10,7 +10,9 @@
             margin: 40px;
             padding: 20px;
             line-height: 1.6;
-            background-color: #f0f0f0; /* light grey */
+            background-color: #f0f0f0;
+            color: #000;
+            transition: background-color 0.3s, color 0.3s;
         }
 
         h1, h2, h3 {
@@ -29,6 +31,7 @@
         ul, ol {
             padding-left: 30px;    
         }
+
         img {
             border: 2px solid darkred;
             border-radius: 8px;
@@ -36,9 +39,26 @@
             margin: 20px 0;
         }
 
+        body.dark-mode {
+            background-color: #1e1e1e;
+            color: #f0f0f0;
+        }
+
+        body.dark-mode a {
+            color: #ff6666;
+        }
+
+        button {
+            margin-bottom: 20px;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
+    <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
+
     <h1>Welcome to My Website!!!</h1>
     <p>I'm Silver Duerson, a tech enthusiast exploring software development, AI, and cybersecurity. Here you'll find some of my projects and experiments that I’ve been working on.</p>
 
@@ -75,5 +95,23 @@
 
     <h3>The Better Page</h3>
     <a href="2ndpage.html">Go to Better Page</a>
+
+    <script>
+        // Dark mode toggle
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+
+        function playBackgroundMusic() {
+        var audio = new Audio('among-us-imposter-sound-effect-made-with-Voicemod.mp3');
+        audio.loop = true;
+        audio.play();
+    }
+
+    window.onload = function() {
+        playBackgroundMusic();
+    };
+</script>
 </body>
 </html>
+
